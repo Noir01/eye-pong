@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eyeball Pong</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <h1>Eyeball Pong</h1>
+          <p class="tagline">
+            Laptop-only pong you play with your eyes. Camera data never leaves this page.
+          </p>
+        </div>
+        <button id="cameraOffBtn" class="link-button" type="button" hidden>Turn camera off</button>
+      </header>
+
+      <section id="deviceGate" class="panel hidden">
+        <p>Laptop with a webcam required. Touch devices are blocked for privacy and performance.</p>
+      </section>
+
+      <section id="splashPanel" class="panel">
+        <p class="text-sm">
+          You will grant webcam access, stare at a few calibration dots, then rally to five points vs. a basic CPU.
+        </p>
+        <button id="startBtn" type="button" class="primary">Start Calibration</button>
+        <p class="privacy">Camera stays local. No uploads. Works best in Chrome/Edge/Firefox on desktop.</p>
+      </section>
+
+      <section id="statusPanel" class="panel hidden">
+        <p id="statusText"></p>
+        <button id="retryBtn" type="button" class="secondary hidden">Try Again</button>
+      </section>
+
+      <section id="calibrationPanel" class="panel hidden">
+        <h2>Calibration</h2>
+        <p>
+          Look at each dot and click while staring for about half a second. Collect samples for all dots, then start the game.
+        </p>
+        <div class="calibration-board-wrap">
+          <div id="calibrationBoard" class="calibration-board"></div>
+          <p class="text-sm">
+            Hard-coded for the 900×600 playfield—tap each dot near the edges to capture wide gaze positions.
+          </p>
+        </div>
+        <div class="calibration-actions">
+          <span id="calibrationProgress" class="text-sm">0 / 16 completed</span>
+          <button id="calibrationResetBtn" type="button" class="link-button">Reset</button>
+        </div>
+        <button id="calibrationDoneBtn" type="button" class="primary" disabled>Done, Start Game</button>
+      </section>
+
+      <section id="gameWrapper" class="game hidden">
+        <div class="hud">
+          <div id="scoreboard" class="scoreboard">CPU ↑ 0 — 0 YOU ↓</div>
+          <div class="hud-buttons">
+            <button id="pauseBtn" type="button" class="secondary">Pause</button>
+            <button id="resumeBtn" type="button" class="secondary hidden">Resume</button>
+            <button id="recalibrateBtn" type="button" class="secondary">Recalibrate</button>
+            <button id="quitBtn" type="button" class="secondary">Quit to Splash</button>
+          </div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" width="900" height="600"></canvas>
+          <div id="trackingIndicator" class="tracking-indicator hidden">Tracking…</div>
+          <div id="overlay" class="overlay hidden">
+            <p id="overlayText"></p>
+            <div class="overlay-actions">
+              <button id="resumeOverlayBtn" type="button" class="primary hidden">Resume</button>
+              <button id="playAgainBtn" type="button" class="primary hidden">Play Again</button>
+            </div>
+          </div>
+        </div>
+        <p class="text-sm debug-hint" id="debugHint" hidden>
+          Debug mode enabled. Use ←/→ arrows if gaze is unavailable.
+        </p>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/webgazer/dist/webgazer.min.js" defer></script>
+    <script src="js/util.js" defer></script>
+    <script src="js/ai.js" defer></script>
+    <script src="js/physics.js" defer></script>
+    <script src="js/webgazer-setup.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
