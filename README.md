@@ -2,7 +2,7 @@
 
 **Play pong with your eyes.** No hands, no controllers—just your webcam and your gaze.
 
-Built for the Claude Builder Hackathon at Purdue University (November 9, 2024) using Claude Code and WebGazer.js.
+Built for the Claude Builder Hackathon at Purdue University (November 9, 2025) using Claude Code and WebGazer.js.
 
 ## What is this?
 
@@ -75,7 +75,7 @@ SPLASH → CALIBRATION → COUNTDOWN → PLAYING ⇄ PAUSED → GAMEOVER
 
 ## Hackathon Context
 
-This project was built in ~6 hours during the Claude Builder Hackathon at Purdue on November 9, 2024. The goal was to explore what's possible with AI-assisted development (Claude Code) and browser-based eye tracking.
+This project was built in ~3 hours during the Claude Builder Hackathon at Purdue on November 9, 2025. The goal was to explore what's possible with AI-assisted development (Claude Code) and browser-based eye tracking.
 
 Key learnings:
 - WebGazer's default calibration struggles with small, fast-moving targets
@@ -91,4 +91,4 @@ MIT - Do whatever you want with it.
 
 - [WebGazer.js](https://webgazer.cs.brown.edu/) by Brown University HCI Group
 - Built with [Claude Code](https://claude.ai/code)
-- Hackathon organized by Purdue ACM & Anthropic
+- Hackathon organized by Purdue Builder's Club & Anthropic
